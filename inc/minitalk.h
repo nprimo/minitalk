@@ -6,12 +6,12 @@
 /*   By: nprimo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:22:28 by nprimo            #+#    #+#             */
-/*   Updated: 2022/01/19 16:24:39 by nprimo           ###   ########.fr       */
+/*   Updated: 2022/01/27 11:34:21 by nprimo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINITALK_H
-# define MINITAL_H
+# define MINITALK_H
 
 # include <sys/types.h>
 # include <unistd.h>
