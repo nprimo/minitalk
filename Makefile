@@ -6,7 +6,7 @@
 #    By: nprimo <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/19 16:30:13 by nprimo            #+#    #+#              #
-#    Updated: 2022/01/19 16:42:53 by nprimo           ###   ########.fr        #
+#    Updated: 2022/01/27 11:33:55 by nprimo           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ RM = rm -rf
 
 $(O_SRV)/%.o: $(SRV)/%.c
 	@ mkdir -p $(O_SRV)
-	$(CC) $(CFLAGS) -I $(INC) -L $(LIBFT) -c $< -o $@  
+	$(CC) $(CFLAGS) -I $(INC) -c $< -o $@  
 
 .PHONY: all re clean fclean
 
