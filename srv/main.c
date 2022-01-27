@@ -6,7 +6,7 @@
 /*   By: nprimo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:20:16 by nprimo            #+#    #+#             */
-/*   Updated: 2022/01/27 12:04:24 by nprimo           ###   ########.fr       */
+/*   Updated: 2022/01/27 13:12:38 by nprimo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 static void	hand_signal(int sig)
 {
-	ft_printf("Got signal %d...\n", sig);
+	if (sig == SIGUSR1)
+		ft_printf("0");
+	if (sig == SIGUSR2)
+		ft_printf("1");
 }
 
 int	main(void)
@@ -31,6 +34,7 @@ int	main(void)
 	while (1)
 	{
 		sigaction(SIGUSR1, &sa, NULL);
+		sigaction(SIGUSR2, &sa, NULL);
 		pause();
 	}
 }
