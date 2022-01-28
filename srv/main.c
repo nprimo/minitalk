@@ -6,7 +6,7 @@
 /*   By: nprimo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:20:16 by nprimo            #+#    #+#             */
-/*   Updated: 2022/01/27 13:12:38 by nprimo           ###   ########.fr       */
+/*   Updated: 2022/01/28 11:06:02 by nprimo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ int	main(void)
 	pid = getpid();
 	ft_printf("PID: %d\n", pid);
 	sigemptyset(&sa.sa_mask);
-	sa.sa_flags = 0;
-	sa.sa_flags = sa.sa_flags | SA_NODEFER | SA_RESETHAND;
 	sa.sa_handler = hand_signal;
 	while (1)
 	{
