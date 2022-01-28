@@ -6,7 +6,7 @@
 #    By: nprimo <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/19 16:30:13 by nprimo            #+#    #+#              #
-#    Updated: 2022/01/27 12:19:52 by nprimo           ###   ########.fr        #
+#    Updated: 2022/01/28 16:11:30 by nprimo           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,10 +54,14 @@ $(LIBFT_A):
 	$(MAKE) -C $(LIBFT)
 
 clean:
-	$(RM) $(O_SRV)
+	$(RM) $(wildcard $(O_SRV)/*.o)
+	$(RM) $(wildcard $(O_CLN/*.o))
+	$(MAKE) clean -C $(LIBFT)
 
 fclean: clean
 	$(RM) $(NAME_SRV)
+	$(RM) $(NAME_CLN)
+	$(MAKE) fclean -C $(LIBFT)
 
 re: fclean all
 
