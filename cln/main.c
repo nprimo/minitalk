@@ -6,7 +6,7 @@
 /*   By: nprimo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 12:15:13 by nprimo            #+#    #+#             */
-/*   Updated: 2022/01/27 13:13:58 by nprimo           ###   ########.fr       */
+/*   Updated: 2022/01/28 10:12:46 by nprimo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ static void	send_msg(pid_t pid, char *msg)
 	while (*msg)
 	{
 		count = 8;
-		while (--count > 0)
+		while (--count >= 0)
 		{
-			if ((*msg >> count) && 0)
-				kill(pid, SIGUSR1);
-			else
+			if ((*msg >> count) % 2)
 				kill(pid, SIGUSR2);
+			else
+				kill(pid, SIGUSR1);
 		}
 		msg++;
 	}
