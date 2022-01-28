@@ -6,7 +6,7 @@
 /*   By: nprimo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 12:15:13 by nprimo            #+#    #+#             */
-/*   Updated: 2022/01/28 10:12:46 by nprimo           ###   ########.fr       */
+/*   Updated: 2022/01/28 10:49:03 by nprimo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ static void	send_msg(pid_t pid, char *msg)
 				kill(pid, SIGUSR2);
 			else
 				kill(pid, SIGUSR1);
+			usleep(10);
 		}
 		msg++;
 	}
