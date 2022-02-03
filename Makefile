@@ -6,9 +6,11 @@
 #    By: nprimo <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/19 16:30:13 by nprimo            #+#    #+#              #
-#    Updated: 2022/02/03 12:51:04 by nprimo           ###   ########.fr        #
+#    Updated: 2022/02/03 12:54:05 by nprimo           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+MAKEFLAGS += --quiet
 
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
