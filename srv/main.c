@@ -6,7 +6,7 @@
 /*   By: nprimo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:20:16 by nprimo            #+#    #+#             */
-/*   Updated: 2022/01/28 12:42:11 by nprimo           ###   ########.fr       */
+/*   Updated: 2022/02/03 15:03:27 by nprimo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,16 @@ static void	hand_signal(int sig)
 		c += (0 << count);
 	if (--count == -1)
 	{
-		ft_printf("%c", c);
+		ft_putchar_fd(c, 1);
 		count = 7;
 		c = 0;
 	}
+}
+
+static int	return_error(void)
+{
+	ft_printf("Error\n");
+	return (1);
 }
 
 int	main(void)
@@ -42,8 +48,9 @@ int	main(void)
 	sa.sa_handler = hand_signal;
 	while (1)
 	{
-		sigaction(SIGUSR1, &sa, NULL);
-		sigaction(SIGUSR2, &sa, NULL);
+		if (sigaction(SIGUSR1, &sa, NULL) == -1
+			|| sigaction(SIGUSR2, &sa, NULL) == -1)
+			return (return_error());
 		pause();
 	}
 }
