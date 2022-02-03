@@ -6,7 +6,7 @@
 #    By: nprimo <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/19 16:30:13 by nprimo            #+#    #+#              #
-#    Updated: 2022/01/28 16:11:30 by nprimo           ###   ########.fr        #
+#    Updated: 2022/02/03 12:51:04 by nprimo           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ INC = inc
 LIBFT = ft_printf
 LIBFT_A = ft_printf/libftprintf.a
 
-NAME_SRV = server
+NAME = server
 NAME_CLN = client
 
 RM = rm -rf
@@ -42,9 +42,9 @@ $(O_CLN)/%.o: $(CLN)/%.c
 
 .PHONY: all re clean fclean
 
-all: $(NAME_SRV) $(NAME_CLN)
+all: $(NAME) $(NAME_CLN)
 
-$(NAME_SRV): $(LIBFT_A) $(O_SRVS)
+$(NAME): $(LIBFT_A) $(O_SRVS)
 	$(CC) $(CFLAGS) -o $@ $^ -I $(INC) $(LIBFT_A)
 
 $(NAME_CLN): $(LIBFT_A) $(O_CLNS)
